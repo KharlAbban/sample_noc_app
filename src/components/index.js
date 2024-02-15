@@ -1,0 +1,7 @@
+export {default as NotFoundPage} from "./errors/NotFoundPage"
+export {default as IndexErrorPage} from "./errors/IndexErrorPage"
+export {default as ForgotPasswordPage} from "./ForgotPasswordPage"
+export {default as LoginPage} from "./LoginPage"
+export {default as LogoutPage} from "./LogoutPage"
+export {default as RegisterPage} from "./RegisterPage"
+export {default as DashBoardPage} from "./DashBoardPage"
