@@ -4,7 +4,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {IndexLayout, HomeLayout, SettingsLayout} from './containers';
 import {HomeErrorPage, GeneralSettingsPage, AccountSettingsPage, InfoBaseSettingsPage, LoginPage,NotificationsPage, AllTicketsPage, NewTicketPage, SearchResultsPage, UserProfilePage, StatisticsPage, TicketDetailsPage, DashboardPage, RegisterPage, ForgotPasswordPage, IndexErrorPage, NotFoundPage} from "./components"
 import {loginAction, registerAction, forgotPasswordAction } from "./utils/actions/indexFormActions";
-import {homeLoader, isLoggedInLoader} from "./utils/loaders/homeRoutesLoaders";
+// import {homeLoader, isLoggedInLoader} from "./utils/loaders/homeRoutesLoaders";
 import "./assets/styles/App.css";
 
 const appRouter = createBrowserRouter([
@@ -17,13 +17,13 @@ const appRouter = createBrowserRouter([
         index: true,
         element: <LoginPage />,
         action: loginAction,
-        loader: isLoggedInLoader
+        // loader: isLoggedInLoader
       },
       {
         path: "/login",
         element: <LoginPage />,
         action: loginAction,
-        loader: isLoggedInLoader
+        // loader: isLoggedInLoader
       },
       {
         path: "/register",
@@ -45,7 +45,7 @@ const appRouter = createBrowserRouter([
       {
         index: true,
         element: <DashboardPage />,
-        loader: homeLoader
+        // loader: homeLoader
       },
       {
         path: "/home/notifications",
