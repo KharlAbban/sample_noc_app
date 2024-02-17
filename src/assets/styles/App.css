@@ -20,9 +20,6 @@ body {
 .contrast-color {
     color: var(--text-color-contrast);
 }
-.indexCustomBg {
-    background-color: var(--background-color);
-}
 #root {
     width: 100%;
     height: 100%;

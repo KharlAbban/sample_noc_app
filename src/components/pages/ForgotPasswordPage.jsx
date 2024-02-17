@@ -1,6 +1,7 @@
-import { Form, Link } from "react-router-dom"
+import { Form, Link, useActionData } from "react-router-dom"
 
 const ForgotPasswordPage = () => {
+  const forgotPassworderrors = useActionData();
   return (
     <div className="w-100 h-100 d-flex justify-content-center align-items-center">
       <Form method="post" className="w-75" id="forgotPasswordForm" role="forgotPassword">

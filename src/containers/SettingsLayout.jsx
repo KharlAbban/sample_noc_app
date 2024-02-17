@@ -1,8 +1,9 @@
+import React from 'react'
 
 const SettingsLayout = () => {
   return (
     <div>
-        SettingsLayout      
+      Settings Layout
     </div>
   )
 }

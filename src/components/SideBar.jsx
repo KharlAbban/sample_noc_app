@@ -18,7 +18,7 @@ const SideBar = () => {
 
   return (
     <aside id="sidebar" className={`contrast-color d-flex flex-column position-relative ${closeSidebar ? 'closed': ''}`}>
-          <h1 className="app_logo bottom-0 position-absolute w-100 py-2 text-center mb-0">NOC TTApp</h1>
+          {/* <h1 className="app_logo bottom-0 position-absolute w-100 py-2 text-center mb-0">NOC TTApp</h1>
           <h3 title="Click to toggle sidebar" onClick={handleSidebarClose} className="customerLogo d-flex justify-content-center align-items-center gap-2 py-2 text-center">
             <img src={TransparentLogo} className="img-fluid" alt="" />
             <div className="logo-toggle-div">
@@ -30,7 +30,7 @@ const SideBar = () => {
             <ul className="list-unstyled mx-0">
               {navMenuElements}
             </ul>
-          </nav>
+          </nav> */}
       </aside>
   )
 }

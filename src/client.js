@@ -2,8 +2,8 @@ import "react-dotenv";
 import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 
-const projectId = process.env.REACT_APP_SANITY_PROJECT_ID;
-const projectToken = process.env.REACT_APP_SANITY_TOKEN;
+const projectId = import.meta.env.VITE_APP_SANITY_PROJECT_ID;
+const projectToken = import.meta.env.VITE_APP_SANITY_TOKEN;
 
 export const client = createClient({
     projectId: projectId,

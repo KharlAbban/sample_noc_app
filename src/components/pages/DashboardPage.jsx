@@ -1,13 +1,13 @@
 import { useLoaderData } from "react-router-dom"
 
-const DashBoardPage = () => {
-    const loadedData = useLoaderData().replaceAll("\"","");
+const DashboardPage = () => {
+    // const loadedData = useLoaderData().replaceAll("\"","");
 
     return (
     <div className="">
       <h2 className="fw-bold mb-0">Ticket Dashboard</h2>
       <p className="fw-normal">
-        <span className="greeting">Good afternoon, {loadedData}</span>
+        {/* <span className="greeting">Good afternoon, {loadedData}</span> */}
         <span className="date float-end">Saturday, 13th January, 2024</span>
       </p>
 
@@ -63,4 +63,4 @@ const DashBoardPage = () => {
   )
 }
 
-export default DashBoardPage
+export default DashboardPage;

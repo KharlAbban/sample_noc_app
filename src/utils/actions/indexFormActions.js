@@ -1,6 +1,6 @@
 import { redirect } from "react-router-dom";
-import {client} from "../client";
-import bcrypt from "bcryptjs";
+import {client} from "../../client";
+import bcrypt from "bcryptjs-react";
 
 export async function registerAction({request}) {
     try {
@@ -57,7 +57,6 @@ export async function loginAction({request}) {
         // If user exists, check if usernames match
         if (userExists.userName !== username) return {userNameMsg: "No user with this name exists!"}
         // Also check if password matches
-        // console.log(userExists.password, pwd);
         const passwordMatches = await bcrypt.compare(pwd, userExists.password);
         if (!passwordMatches) return {pwdMsg: "Incorrect password!"}
         localStorage.setItem("user", JSON.stringify(username));
