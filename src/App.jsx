@@ -2,9 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 import {IndexLayout, HomeLayout, SettingsLayout} from './containers';
-import {HomeErrorPage, GeneralSettingsPage, AccountSettingsPage, InfoBaseSettingsPage, LoginPage,NotificationsPage, AllTicketsPage, NewTicketPage, SearchResultsPage, UserProfilePage, StatisticsPage, TicketDetailsPage, DashboardPage, RegisterPage, ForgotPasswordPage, IndexErrorPage, NotFoundPage} from "./components"
+import {HomeErrorPage, GeneralSettingsPage, AccountSettingsPage, InfoBaseSettingsPage, LoginPage,NotificationsPage, AllTicketsPage, NewTicketPage, UserProfilePage, StatisticsPage, TicketDetailsPage, DashboardPage, RegisterPage, ForgotPasswordPage, IndexErrorPage, NotFoundPage} from "./components"
 import {loginAction, registerAction, forgotPasswordAction } from "./utils/actions/indexFormActions";
-// import {homeLoader, isLoggedInLoader} from "./utils/loaders/homeRoutesLoaders";
+import {homeLoader, isLoggedInLoader} from "./utils/loaders/homeRoutesLoaders";
 import "./assets/styles/App.css";
 
 const appRouter = createBrowserRouter([
@@ -17,13 +17,13 @@ const appRouter = createBrowserRouter([
         index: true,
         element: <LoginPage />,
         action: loginAction,
-        // loader: isLoggedInLoader
+        loader: isLoggedInLoader
       },
       {
         path: "/login",
         element: <LoginPage />,
         action: loginAction,
-        // loader: isLoggedInLoader
+        loader: isLoggedInLoader
       },
       {
         path: "/register",
@@ -41,11 +41,12 @@ const appRouter = createBrowserRouter([
     path: "/home",
     element: <HomeLayout />,
     errorElement: <HomeErrorPage />,
+    loader: homeLoader,
     children: [
       {
         index: true,
         element: <DashboardPage />,
-        // loader: homeLoader
+        loader: homeLoader
       },
       {
         path: "/home/notifications",
@@ -62,10 +63,6 @@ const appRouter = createBrowserRouter([
       {
         path: "/home/tickets/:ticketId",
         element: <TicketDetailsPage />
-      },
-      {
-        path: "/home/search",
-        element: <SearchResultsPage />
       },
       {
         path: "/home/users/:userId",
@@ -96,7 +93,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/settings/info-base",
         element: <InfoBaseSettingsPage />
-      }
+      },
     ]
   },
   {

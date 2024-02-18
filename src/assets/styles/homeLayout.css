@@ -42,15 +42,10 @@ body::before {
     background: #011936;
 }
 .customerLogo {
-    cursor: pointer;
     font-size: 1.2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 .customerLogo img {
-    height: 35px;
-}
-.logo-toggle-text {
-    font-size: 0.5rem;
+    height: 30px;
 }
 #sidebar a {
     text-decoration: none;
@@ -80,19 +75,13 @@ body::before {
     background: #eee;
     color: #011936 !important;
 }
+#sidebar.closed h3.customerLogo {
+    display: none !important;
+}
 #sidebar.closed .sidenav-item,
 #sidebar.closed .sidenav-item > a {
     width: 100%;
     border-radius: 0;
-}
-#sidebar.closed .logo-toggle-div,
-#sidebar.closed .rm-sm-screen {
-    display: block;
-    transition: 0.3s ease;
-}
-#sidebar.closed .logo-toggle-div,
-#sidebar.closed .rm-sm-screen {
-    display: none;
 }
 #sidebar.closed .sidenav-item,
 #sidebar.closed .sidenav-item a {
@@ -103,4 +92,19 @@ body::before {
 }
 #sidebar.closed i {
     font-size: 1.7rem;
+}
+header.header {
+    background: var(--text-color-contrast);
+}
+.search-form input {
+    border: 1px solid #011936;
+    outline: none;
+    border-radius: 25px;
+}
+.notifToggle {
+    border-radius: 50%;
+}
+.notifToggle::after,
+.notifToggle::before {
+    content: " " !important;
 }

@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-const SearchResultsPage = () => {
+const SearchResultsPage = ({searchTerm}) => {
   return (
     <div>
       Search Results Page
+      <p>{searchTerm}</p>
     </div>
   )
 }

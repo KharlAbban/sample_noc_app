@@ -1,15 +1,25 @@
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData } from "react-router-dom";
+
 
 const DashboardPage = () => {
-    // const loadedData = useLoaderData().replaceAll("\"","");
+    const {User} = useLoaderData();
 
     return (
-    <div className="">
-      <h2 className="fw-bold mb-0">Ticket Dashboard</h2>
-      <p className="fw-normal">
-        {/* <span className="greeting">Good afternoon, {loadedData}</span> */}
+    <>
+      <h2 className="fw-bold mb-0 bg-warning">Ticket Dashboard</h2>
+      <p className="fw-normal bg-primary">
+        <span className="greeting">Good afternoon, {User.replaceAll(`\"`, '')}</span>
         <span className="date float-end">Saturday, 13th January, 2024</span>
       </p>
+
+      {/* Cards Section with Summarised Stats */}
+      <div className="py-2 mb-1 w-100 bg-primary"></div>
+
+      {/* Two column section with tickets and quick ticket */}
+      <main className="d-flex gap-1 w-100">
+        <div className="w-75 py-2 bg-success"></div>
+        <div className="w-25 py-2 bg-danger"></div>
+      </main>
 
       {/* <div class="something d-flex gap-3 mb-3">
         <div class="card card-body dashStatsCard ps-3 pe-1 py-1">
@@ -59,7 +69,7 @@ const DashboardPage = () => {
         </div>
     </div> */}
 
-    </div>
+    </>
   )
 }
 

@@ -15,7 +15,7 @@ const IndexLayout = () => {
           </main>
         </div>
         {/* Right Side of Layout */}
-        <div className="w-50">
+        <div className="w-50 rightLayout">
           <h3 className="text-center display-5 fw-bold d-md-none">NOCTTApp</h3>
           <Outlet />
         </div>

@@ -20,3 +20,5 @@ export {default as GeneralSettingsPage} from "./pages/GeneralSettingsPage";
 export {default as AccountSettingsPage} from "./pages/AccountSettingsPage";
 export {default as InfoBaseSettingsPage} from "./pages/InfoBaseSettingsPage";
 // Components
+export { default as DashboardHeaderWithSearch} from "./DashboardHeaderWithSearch";
+export {default as Sidebar} from "./SideBar";

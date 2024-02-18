@@ -28,3 +28,13 @@
 .indexCustomBg {
     background-color: var(--background-color);
 }
+
+@media screen and (max-width: 768px) {
+    .rightLayout {
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }    
+}
