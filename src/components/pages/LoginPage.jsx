@@ -18,6 +18,7 @@ const LoginPage = () => {
           {loginErrors?.pwdMsg ? <p className="invalid-text small text-danger">{loginErrors.pwdMsg}</p> : ""}
         </div>
         <button type="submit" className="btn btn-primary w-100">Login</button>
+        {loginErrors?.message ? <p className="invalid-text small text-danger">{loginErrors.message}</p> : ""}
         <p className="form-text small mb-0">
           <Link to="/forgot-password" className="text-decoration-none">Forgot password?</Link>
         </p>
