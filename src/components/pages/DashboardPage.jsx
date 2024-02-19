@@ -1,4 +1,8 @@
 import { useLoaderData } from "react-router-dom";
+import { BsCalendar2Fill } from "react-icons/bs";
+import DashboardCards from "../DashboardCards";
+import QuickTicket from "../QuickTicket";
+import OpenTickets from "../OpenTickets";
 
 
 const DashboardPage = () => {
@@ -6,69 +10,28 @@ const DashboardPage = () => {
 
     return (
     <>
-      <h2 className="fw-bold mb-0 bg-warning">Ticket Dashboard</h2>
-      <p className="fw-normal bg-primary">
+      <h2 className="fw-bold mb-0">Ticket Dashboard</h2>
+      <p className="fw-normal">
         <span className="greeting">Good afternoon, {User.replaceAll(`\"`, '')}</span>
-        <span className="date float-end">Saturday, 13th January, 2024</span>
+        <span className="date float-end d-flex align-items-center">
+            {new Date(Date.now()).toDateString()}<BsCalendar2Fill className="ms-2" />
+        </span>
       </p>
 
       {/* Cards Section with Summarised Stats */}
-      <div className="py-2 mb-1 w-100 bg-primary"></div>
+        <DashboardCards />
 
       {/* Two column section with tickets and quick ticket */}
       <main className="d-flex gap-1 w-100">
-        <div className="w-75 py-2 bg-success"></div>
-        <div className="w-25 py-2 bg-danger"></div>
+        {/* Tickets Section */}
+        <div className="w-70 py-2 bg-success">
+            <OpenTickets />
+        </div>
+        {/* Quick Ticket Section */}
+        <div className="w-30 py-2 shadow-lg bg-white rounded-3">
+            <QuickTicket />
+        </div>
       </main>
-
-      {/* <div class="something d-flex gap-3 mb-3">
-        <div class="card card-body dashStatsCard ps-3 pe-1 py-1">
-            <div class="help text-end">
-                <img src="assets/media/ph_question-bold.svg" alt="" class="">
-            </div>
-            <div class="d-flex align-items-center gap-2">
-                <span class="bullet bullet-completed"></span> Completed
-            </div>
-            <h3 class="display-6">2350</h3>
-        </div>
-        <div class="card card-body dashStatsCard ps-3 pe-1 py-1">
-            <div class="help text-end">
-                <img src="assets/media/ph_question-bold.svg" alt="" class="img-fluid">
-            </div>
-            <div class="d-flex align-items-center gap-2">
-                <span class="bullet bullet-progress"></span> In Progress
-            </div>
-            <h3 class="display-6">3100</h3>
-        </div>
-        <div class="card card-body dashStatsCard ps-3 pe-1 py-1">
-            <div class="help text-end">
-                <img src="assets/media/ph_question-bold.svg" alt="" class="img-fluid">
-            </div>
-            <div class="d-flex align-items-center gap-2">
-                <span class="bullet bullet-pending"></span> Pending
-            </div>
-            <h3 class="display-6">2350</h3>
-        </div>
-        <div class="card card-body dashStatsCard ps-3 pe-1 py-1">
-            <div class="help text-end">
-                <img src="assets/media/ph_question-bold.svg" alt="" class="img-fluid">
-            </div>
-            <div class="d-flex align-items-center gap-2">
-                <span class="bullet bullet-cancelled"></span> Cancelled
-            </div>
-            <h3 class="display-6">124</h3>
-        </div>
-        <div class="card card-body dashStatsCard ps-3 pe-1 py-1">
-            <div class="help text-end">
-                <img src="assets/media/ph_question-bold.svg" alt="" class="img-fluid">
-            </div>
-            <div class="d-flex align-items-center gap-2">
-                <span class="bullet bullet-total"></span> Total
-            </div>
-            <h3 class="display-6">5699</h3>
-        </div>
-    </div> */}
-
     </>
   )
 }

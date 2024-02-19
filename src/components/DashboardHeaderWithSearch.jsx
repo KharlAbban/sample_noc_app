@@ -1,8 +1,8 @@
 import React from 'react'
 import { Form } from 'react-router-dom';
 import { IoMdNotifications } from "react-icons/io";
-import Dropdown from 'react-bootstrap/Dropdown';
-import ProfileImg from "../assets/media/fgblogo_icon-removebg-preview.png";
+import HeaderProfileDropdown from './HeaderProfileDropdown';
+
 
 const DashboardHeaderWithSearch = ({searchTerm, setSearchTerm}) => {
   return (
@@ -14,24 +14,15 @@ const DashboardHeaderWithSearch = ({searchTerm, setSearchTerm}) => {
                 </div>
             </Form>
 
-            <div className='d-flex gap-2'>
-                <Dropdown>
-                    <Dropdown.Toggle className='notifToggle'>
-                        <IoMdNotifications role='button' fontSize={30} className='dropdown-toggle' data-bs-toggle="dropdown" />
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item>Item 1</Dropdown.Item>
-                        <Dropdown.Item>Item 2</Dropdown.Item>
-                        <Dropdown.Item>Item 3</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-                <div className='p-1 border border-black rounded-5 d-flex align-items-center justify-content-center'>
-                    <img src={ProfileImg} height={30} className='' alt="" />
+            <div className='d-flex gap-2 h-100'>
+                <div className='shadow-lg rounded-5'>
+                    <IoMdNotifications className='headerIcon p-1' fontSize={30} />
                 </div>
+                <HeaderProfileDropdown />
             </div>
         </div>
     </header>
   )
 }
 
-export default DashboardHeaderWithSearch
+export default DashboardHeaderWithSearch;

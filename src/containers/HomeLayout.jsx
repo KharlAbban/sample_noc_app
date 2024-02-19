@@ -17,7 +17,7 @@ const HomeLayout = () => {
   return (
     <div className="d-flex w-100 h-100">
       <SideBar />
-      <main className="homeOutlet w-100 ps-3 pe-2">
+      <main className="homeOutlet w-100 ps-3 pe-2 overflow-y-auto">
         <DashboardHeaderWithSearch searchTerm={searchTerm} setSearchTerm={setsearchTerm} />
         {(searchPhrase !== null) ? <SearchResultsPage searchTerm={searchTerm} /> : <Outlet />}
       </main>

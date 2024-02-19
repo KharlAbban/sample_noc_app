@@ -9,18 +9,6 @@ body {
     width: 100%;
     color: var(--text-color);
 }
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: url("../media/fgblogo_icon.jpg") no-repeat;
-    background-size: cover;
-    filter: blur(35px);
-    z-index: -1;
-}
 .contrast-color {
     color: var(--text-color-contrast);
 }
@@ -93,18 +81,54 @@ body::before {
 #sidebar.closed i {
     font-size: 1.7rem;
 }
-header.header {
-    background: var(--text-color-contrast);
-}
 .search-form input {
     border: 1px solid #011936;
     outline: none;
     border-radius: 25px;
 }
-.notifToggle {
+.headerIcon {
     border-radius: 50%;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 15px rgba(0,0,0,0.3);
 }
-.notifToggle::after,
-.notifToggle::before {
-    content: " " !important;
-}
+.bullet {
+    height: 15px;
+    width: 15px;
+    background: #000;
+    display: inline-block;
+    border-radius: 50%;
+  }
+  .bullet-completed {
+    background: rgba(139, 243, 122, 1);
+  }
+  .bullet-progress {
+    background: rgba(27, 27, 255, 1);
+  }
+  .bullet-pending {
+    background: rgba(255, 59, 59, 1);
+  }
+  .bullet-cancelled {
+    background: rgba(255, 162, 76, 1);
+  }
+  .bullet-total {
+    background: rgba(55, 39, 114, 1);
+  }
+  .form-control, .input-group-text, .form-select {
+    padding: 3px 5px;
+  }
+  .quick-ticket-btn {
+    background: #EB5E55;
+    color: var(--text-color-contrast);
+    transition: 0.3s ease;
+  }
+  .quick-ticket-btn:hover {
+    background: #011936;
+    color: var(--text-color-contrast);
+  }
+  .w-70 {
+    width: 70%;
+  }
+  .w-30 {
+    width: 30%;
+  }
