@@ -10,7 +10,7 @@ const DashboardPage = () => {
 
     return (
     <>
-      <h2 className="fw-bold mb-0">Ticket Dashboard</h2>
+      <h1 className="fw-bold mb-0">Ticket Dashboard</h1>
       <p className="fw-normal">
         <span className="greeting">Good afternoon, {User.replaceAll(`\"`, '')}</span>
         <span className="date float-end d-flex align-items-center">
@@ -24,11 +24,11 @@ const DashboardPage = () => {
       {/* Two column section with tickets and quick ticket */}
       <main className="d-flex gap-1 w-100">
         {/* Tickets Section */}
-        <div className="w-70 py-2 bg-success">
+        <div className="w-70">
             <OpenTickets />
         </div>
         {/* Quick Ticket Section */}
-        <div className="w-30 py-2 shadow-lg bg-white rounded-3">
+        <div className="w-30 py-2 shadow-lg bg-white">
             <QuickTicket />
         </div>
       </main>

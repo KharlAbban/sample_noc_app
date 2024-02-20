@@ -9,6 +9,10 @@ body {
     width: 100%;
     color: var(--text-color);
 }
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
 .contrast-color {
     color: var(--text-color-contrast);
 }
@@ -132,3 +136,35 @@ body {
   .w-30 {
     width: 30%;
   }
+  .dash-open-tt-record {
+    background: #fad190;
+    transition: 0.3s ease;
+  }
+  .dash-recent-tt-record {
+    background: #b0d0f3;
+    transition: 0.3s ease;
+  }
+  .dash-open-tt-record:hover {
+    background: #cba15c;
+    transform: scale(1.02);
+  }
+  .dash-recent-tt-record:hover {
+    background: #789abe;
+    transform: scale(1.02);
+  }
+  .ticket-form-container {
+    background: #102536;
+    color: var(--text-color-contrast);
+  }
+  .newTTBtn {
+    border-radius: 30px;
+    outline: none;
+    transition: 0.2s ease;
+  }
+  .newTTBtn:hover {
+    transform: scale(1.1);
+  }
+  .newTTBtn2:hover {
+    transform: scale(0.95);
+  }
+  
