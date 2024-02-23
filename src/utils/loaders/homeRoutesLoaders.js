@@ -19,6 +19,6 @@ export const isLoggedInLoader = () => {
     if (User) {
         return redirect("/home");
     } else {
-        return redirect("/");
+        return null;
     }
 }
