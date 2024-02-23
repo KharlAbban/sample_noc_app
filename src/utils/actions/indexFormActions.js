@@ -31,7 +31,7 @@ export async function registerAction({request}) {
             }
         } else {
             const newStaff = await client.createIfNotExists(doc);
-            return redirect("/login");
+            return redirect("/");
         }
     } catch (err) {
         if (err.message.includes(`Malformed document ID:`)) {
@@ -62,9 +62,12 @@ export async function loginAction({request}) {
         if (userExists.userName !== username) return {userNameMsg: "No user with this name exists!"}
         // Also check if password matches
         const passwordMatches = await bcrypt.compare(pwd, userExists.password);
-        if (!passwordMatches) return {pwdMsg: "Incorrect password!"}
-        localStorage.setItem("user", JSON.stringify(username));
-        return redirect("/home");
+        if (!passwordMatches) {
+            return {pwdMsg: "Incorrect password!"}
+        } else {
+            localStorage.setItem("user", JSON.stringify(username));
+            return redirect("/home");
+        }
     } catch (err) {
         if (err.message.includes(`Malformed document ID:`)) {
             return {

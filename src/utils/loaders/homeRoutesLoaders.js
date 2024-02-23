@@ -10,7 +10,7 @@ export const homeLoader = ({request}) => {
             User
         };
     } else {
-        return redirect("/login");
+        return redirect("/");
     }
 }
 
@@ -19,6 +19,6 @@ export const isLoggedInLoader = () => {
     if (User) {
         return redirect("/home");
     } else {
-        return redirect("/login");
+        return redirect("/");
     }
 }

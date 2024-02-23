@@ -16,7 +16,7 @@ const ForgotPasswordPage = () => {
         </div>
         <button type="submit" className="btn btn-primary w-100">Get Reset Link</button>
         <p className="form-text small">
-          Remembered your password? <Link to="/login">Log In</Link>
+          Remembered your password? <Link to="/">Log In</Link>
         </p>
       </Form>
     </div>

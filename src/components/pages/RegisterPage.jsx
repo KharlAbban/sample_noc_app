@@ -25,7 +25,7 @@ const RegisterPage = () => {
         <button type="submit" className="btn btn-primary w-100">Sign Up</button>
           {registerErrors?.message ? <p className="invalid-text small text-danger">{registerErrors.message}</p> : ""}
         <p className="form-text small">
-          Signed up already? <Link to="/login">Log In</Link>
+          Signed up already? <Link to="/">Log In</Link>
         </p>
       </Form>
     </div>
