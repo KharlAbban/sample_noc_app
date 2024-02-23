@@ -15,7 +15,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         index: true,
-        path: "/",
+        // path: "/",
         element: <LoginPage />,
         action: loginAction,
         loader: isLoggedInLoader
