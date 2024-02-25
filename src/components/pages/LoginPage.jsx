@@ -5,7 +5,7 @@ const LoginPage = () => {
 
   return (
     <div className="w-100 h-100 d-flex justify-content-center align-items-center">
-      <Form method="post" action="/login" className="w-75" id="loginForm" role="login">
+      <Form method="post" className="w-75" id="loginForm" role="login">
         <h4 className="fs-3 text-decoration-underline">LogIn</h4>
         <div className="form-group my-3">
           <label className="fw-normal" htmlFor="email">Username:</label>

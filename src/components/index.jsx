@@ -15,6 +15,8 @@ export {default as SearchResultsPage} from "./pages/SearchResultsPage";
 export {default as UserProfilePage} from "./pages/UserProfilePage";
 export {default as StatisticsPage} from "./pages/StatisticsPage";
 export {default as TicketDetailsPage} from "./pages/TicketDetailsPage";
+export {default as MonthlyTicketsPage} from "./pages/MonthlyTicketsPage";
+export {default as EditTicketPage} from "./pages/EditTicketPage";
 // Settings Pages
 export {default as GeneralSettingsPage} from "./pages/GeneralSettingsPage";
 export {default as AccountSettingsPage} from "./pages/AccountSettingsPage";
@@ -22,3 +24,4 @@ export {default as InfoBaseSettingsPage} from "./pages/InfoBaseSettingsPage";
 // Components
 export { default as DashboardHeaderWithSearch} from "./DashboardHeaderWithSearch";
 export {default as Sidebar} from "./SideBar";
+export {default as TicketDetails} from "./TicketDetails";

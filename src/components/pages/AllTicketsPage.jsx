@@ -5,8 +5,8 @@ const AllTicketsPage = () => {
   return (
     <>
       <h1 className="fw-bold mb-0">All Tickets Created</h1>
-      <p className="fw-normal">
-      </p>
+      <p className="fw-normal"></p>
+      <hr />
 
       <AllTickets />
     </>

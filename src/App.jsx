@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 import {IndexLayout, HomeLayout, SettingsLayout} from './containers';
-import {HomeErrorPage, GeneralSettingsPage, AccountSettingsPage, InfoBaseSettingsPage, LoginPage,NotificationsPage, AllTicketsPage, NewTicketPage, UserProfilePage, StatisticsPage, TicketDetailsPage, DashboardPage, RegisterPage, ForgotPasswordPage, IndexErrorPage, NotFoundPage} from "./components"
+import {HomeErrorPage, GeneralSettingsPage, AccountSettingsPage, InfoBaseSettingsPage, LoginPage,NotificationsPage, AllTicketsPage, NewTicketPage, UserProfilePage, StatisticsPage, TicketDetailsPage, DashboardPage, RegisterPage, ForgotPasswordPage, IndexErrorPage, NotFoundPage, MonthlyTicketsPage, EditTicketPage} from "./components"
 import {loginAction, registerAction, forgotPasswordAction } from "./utils/actions/indexFormActions";
 import {homeLoader, isLoggedInLoader} from "./utils/loaders/homeRoutesLoaders";
 import "./assets/styles/App.css";
@@ -15,7 +15,6 @@ const appRouter = createBrowserRouter([
     children: [
       {
         index: true,
-        // path: "/",
         element: <LoginPage />,
         action: loginAction,
         loader: isLoggedInLoader
@@ -47,17 +46,14 @@ const appRouter = createBrowserRouter([
         path: "/home/notifications",
         element: <NotificationsPage />,
       },
+      // View single ticket by id. Use "ticket" route instead of "tickets" route
       {
-        path: "/home/tickets",
-        element: <AllTicketsPage />
-      },
-      {
-        path: "/home/tickets/new",
-        element: <NewTicketPage />
-      },
-      {
-        path: "/home/tickets/:ticketId",
+        path: "/home/ticket/:ticketId",
         element: <TicketDetailsPage />
+      },
+      {
+        path: "/home/ticket/:ticketId/edit",
+        element: <EditTicketPage />
       },
       {
         path: "/home/users/:userId",
@@ -67,6 +63,34 @@ const appRouter = createBrowserRouter([
         path: "/home/stats",
         element: <StatisticsPage />
       }
+    ]
+  },
+  {
+    path: "/home/tickets",
+    element: <HomeLayout />,
+    loader: homeLoader,
+    errorElement: <HomeErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <AllTicketsPage />,
+      },
+      {
+        path: "/home/tickets/new",
+        element: <NewTicketPage />,
+      },
+      {
+        path: "/home/tickets/:ticketYear/:month",
+        element: <MonthlyTicketsPage />,
+      },
+      {
+        path: "/home/tickets/:ticketYear/:month/:ticketId",
+        element: <TicketDetailsPage />
+      },
+      {
+        path: "/home/tickets/:ticketYear/:month/:ticketId/edit",
+        element: <EditTicketPage />
+      },
     ]
   },
   {

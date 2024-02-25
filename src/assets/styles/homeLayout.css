@@ -168,4 +168,50 @@ a {
   .newTTBtn2:hover {
     transform: scale(0.95);
   }
-  
+  .month-tt-card {
+    height: 120px;
+    width: 150px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.2s;
+    background: #fffcf7;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+  .month-tt-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  }
+  .month-tt-card > .clientName {
+    font-size: 1.1rem;
+  }
+  .month-tt-card .time {
+    font-size: 0.9rem;
+  }
+  .month-tt-card .cause {
+    font-size: 0.7rem;
+    font-style: italic;
+  }
+  .tt-detail-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
+  }
+  .tt-detail-info-section {
+    width: 60%;
+    /* border-right: 2px solid rgba(60, 64, 67, 0.15); */
+  }
+  .tt-detail-update-section {
+    max-height: 540px;
+    width: 40%;
+  }
+  .custom-light-shadow {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-radius: 8px;
+    padding: 0.5rem;
+    background: #fffffe;
+  }
+  img.client-info-profile {
+    height: 60px;
+    width: 60px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+  }

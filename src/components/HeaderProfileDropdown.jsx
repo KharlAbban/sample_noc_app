@@ -1,8 +1,13 @@
 import React from 'react';
 import { FolderFilled, UserOutlined, LogoutOutlined } from '@ant-design/icons';
 import { Dropdown } from 'antd';
-import { Link } from 'react-router-dom';
+import { Form, Link, redirect } from 'react-router-dom';
 import ProfileImg from "../assets/media/fgblogo_icon-removebg-preview.png";
+
+const logoutUser = () => {
+  localStorage.removeItem('token');
+  redirect('/login');
+}
 
 const items = [
   {
@@ -22,7 +27,7 @@ const items = [
   {
     key: '3',
     label: (
-      <Link className='text-decoration-none' to={`/logout`}>Logout</Link>
+      <Link className='text-decoration-none' to={`/home/logout`}>Logout</Link>
     ),
     icon: <LogoutOutlined />,
     danger: true
