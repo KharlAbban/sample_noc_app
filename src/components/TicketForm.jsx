@@ -146,7 +146,7 @@ const TicketForm = () => {
                         <div className="form-check form-switch">
                             <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">IS RESOLVED</label>
-                            </div>
+                        </div>
                         <div className="valid-feedback">
                             Looks good!
                         </div>

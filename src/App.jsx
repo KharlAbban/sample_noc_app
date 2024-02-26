@@ -6,6 +6,7 @@ import {HomeErrorPage, GeneralSettingsPage, AccountSettingsPage, InfoBaseSetting
 import {loginAction, registerAction, forgotPasswordAction } from "./utils/actions/indexFormActions";
 import {homeLoader, isLoggedInLoader} from "./utils/loaders/homeRoutesLoaders";
 import "./assets/styles/App.css";
+import { deleteTicketAction } from './utils/actions/ticketActions';
 
 const appRouter = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const appRouter = createBrowserRouter([
         element: <EditTicketPage />
       },
       {
+        path: "/home/ticket/:ticketId/destroy",
+        action: deleteTicketAction
+      },
+      {
         path: "/home/users/:userId",
         element: <UserProfilePage />
       },
@@ -71,13 +76,10 @@ const appRouter = createBrowserRouter([
     loader: homeLoader,
     errorElement: <HomeErrorPage />,
     children: [
+      //Ticket Read paths
       {
         index: true,
         element: <AllTicketsPage />,
-      },
-      {
-        path: "/home/tickets/new",
-        element: <NewTicketPage />,
       },
       {
         path: "/home/tickets/:ticketYear/:month",
@@ -87,9 +89,20 @@ const appRouter = createBrowserRouter([
         path: "/home/tickets/:ticketYear/:month/:ticketId",
         element: <TicketDetailsPage />
       },
+      // Ticket Create Path
+      {
+        path: "/home/tickets/new",
+        element: <NewTicketPage />,
+      },
+      // Ticket Update Path
       {
         path: "/home/tickets/:ticketYear/:month/:ticketId/edit",
         element: <EditTicketPage />
+      },
+      // Ticket Delete Path
+      {
+        path: "/home/tickets/:ticketYear/:month/:ticketId/destroy",
+        action: deleteTicketAction
       },
     ]
   },

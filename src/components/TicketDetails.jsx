@@ -1,5 +1,6 @@
 import React from 'react';
 import clientPieImg from "../assets/media/PieChart.png"
+import { Form, Link } from 'react-router-dom';
 
 const TicketDetails = () => {
   return (
@@ -91,9 +92,11 @@ const TicketDetails = () => {
           </div>
         </div>
         <div className="tt-detail-buttons end-0 bottom-0 position-absolute me-3 mb-2 d-flex gap-3">
-          <button className="tt-detail-changeStatus btn btn-warning">Edit Ticket</button>
+          <Link to="./edit" className="tt-detail-changeStatus btn btn-warning">Edit Ticket</Link>
           <button className="tt-detail-changeStatus btn btn-success">Close Ticket</button>
-          <button className="tt-detail-changeStatus btn btn-outline-danger">Delete Ticket</button>
+          <Form method='DELETE' action='destroy'>
+            <button className="tt-detail-changeStatus btn btn-outline-danger">Delete Ticket</button>
+          </Form>
         </div>
       </div>
     </div>
